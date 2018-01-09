@@ -1,0 +1,114 @@
+---
+title: "Introduction to using qcapower"
+author: "Ingo Rohlfing"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: yes
+vignette: >
+  %\VignetteIndexEntry{Introduction to using qcapower}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+
+The `R` package `qcapower` allows you to estimate power of a term in a Qualitative Comparative Analysis (QCA), or, more specifically, a truth table analysis. This vignette introduces the package, its in-built functions and things you might want to do with the package output in addition to what the functions offers. At present, the package includes four functions:  
+* `qcapower()`: estimates power of a term  
+* `qp_run_plot()`: a plot of the running power estimates  
+* `qp_quant_plot()`: a plot of the 5%-percentiles of the permuted distributions  
+* `qp_get_n()`: estimates the number of cases needed for achieving a target level of power
+
+All these functions have a *term* as its subject. In a set-relational context, *term* is a neutral term (now meant differently) and capture anything you can encounter in a truth table analysis: a single condition; a conjunction; a disjunction of conditions and conjunctions, that can be necessary or sufficient, that is, INUS and SUIN conditions can also be part of a "term".
+
+At the moment, the package estimates power for sufficient set relationships. In principle, it does not make a difference whether we are interested in sufficiency or necessity. For both types of set relations, the consistency measure is used to distinguish consistent from inconsistent set relations. The difference rests in how consistency is calculated and the package currently only implements the consistency formula for consistency.
+
+
+## Estimating power
+
+The `qcapower()` function can be used to estimate power given information about the other parameters that influence power. The code in brackets refers to the parameters in the `qcapower()` function.
+* `cases`: the number of cases (n)
+* `null_hypo`: the null hypothesis (H0)  
+* `alt_hypo`: the alternative hypothesis (H1)  
+* `alpha`: the level of significance *alpha* (default is 0.05)
+
+The first parameters do not have default values and must be specified by the user. `alpha` is set to 0.05 by default.  
+
+In fuzzy-set QCA (fsQCA), determining the number of cases is easy because it is the total number of cases. The null hypothesis determines the consistency value that separates consistent from inconsistent terms. When it comes to the assignment of outcome values to truth table rows, you might choose 0.85 as the value separating rows that are assigned a "1" (consistency is above 0.85) from those that receive a "0". The null hypothesis would then cover the value of 0.85 (or 0.84, depending on whether you count 0.85 as "in" or "out"). The alternative hypothesis covers the consistency value that you expect a term to have, in fact. For power analysis, the consistency value of H1 must be larger than of H0 because we expect a term to be consistent.
+
+For estimating power, you also need to specify four more parameters.  
+* `sims`: the number of simulations (default is 1000)  
+* `perms`: the number of permutations per simulations (default is 10000)  
+* `cons_threshold`: a tolerance parameter for deriving data with the consistenty level fixed with H1 (default is 0.01)  
+* `set_seed`: the reproducibility parameter for the simulations (default is 135)
+
+The role of the simulations and permutations is explained in the manuscript on which this package is based (see also below). The tolerance parameter `cons_threshold` is part of the package because of the way in which it creates a dataset that has the consistency level that is laid down in H1. The package first draws a random sample of *n* cases and calculates the consistency score. If it is smaller than the value of `alt_hypo`, one inconsistent case is picked at random from the set of all inconsistent cases. This case randomly receives a new set membership in the outcome that is higher than the previous outcome membership because it will increase the overall consistency of the dataset. If the consistency score of the dataset is above the target level, we follow the opposite procedure: a case is sampled for which membership in the outcome is larger than membership in the term, a lower outcome value is then reassigned to the case and consistency is calculated again.
+
+These processes are repeated until the consistency score of the dataset achieves the target value of `alt_hypo`. Because we do not constrain fuzzy-set memberships to two decimal places, it is unlikely that the iterative process does exactly meet the target score. For this reason, we introduce a tolerance parameter telling the `qcapower()` function when the actual consistency value is suffciently close to the intended value and the iteration can be stopped. If one wants to hit exactly the target consistency level exactly, one only has to set `cons_threshold` to 0.
+
+If you want to leave the default parameters as they are, you can, for example, estimate power for H1=1, H0=0.85 and n=15 with one line.
+
+```{r load package}
+devtools::load_all()
+```
+
+
+```{r qcapower example, eval = c(2, 3)}
+power_example <- qcapower(cases = 15, alt_hypo = 1, null_hypo = 0.85)
+load("qcapower_vign.RData")
+head(qcapower_vign)
+```
+
+The output is a dataframe with as many rows as simulations. In addition to the parameters `cases`, `alt_hypo` and `null_hypo`, it contains three columns:  
+* `power`: the power estimate. The entry is the same in each row because it is the power estimate for the entire dataset.
+* `powercum`: the cumulative power estimate. It gives you the estimate up to the given row. For example, after 101 simulations the power estimate is (see `qp_run_plot()` below).  
+* `quant`: the 5%-quantile of the permuted distribution underlying a row (see `qp_quant_plot()` below).
+
+If you are only interested in the power estimate and want a single number as the output, you might take a shortcut by running something like:
+```{r, eval = F}
+mean(qcapower(cases=10, alt_hypo = 1, null_hypo = 0.8, sims = 10, perms = 1000)$power)
+qcapower(cases=10, alt_hypo = 1, null_hypo = 0.8, sims = 10, perms = 1000)$power[1,]
+```
+
+
+### Checking the number of simulations
+
+The power estimate should be reliable in the sense that it should only change marginally if you add 10 or 50 additional simulations. The cumulative power plot is a visual means for checking whether `sims` is sufficiently large. This can be easily displayed with  `qp_run_plot()`. You can add a title to the figure by specifying `title=T`.
+
+```{r qp_run_plot, fig.cap="Fig. 1: Plot of running power estimate"}
+qp_run_plot(qcapower_vign)
+```
+
+In this example, we see that the estimate is oscillating aroung 0.5 after about 300 simulations and stabilizes in this range. Setting `sims` to 1000 therefore seems appropiate. If you prefer a different visualization style, you can of course create your own plot by working with the `powercum` column of your dataset.
+
+
+### Checking the dispersion of estimates
+
+The dispersion of the permuted distributions is useful to look at when interpreting a power estimate. With a small number of cases, the width and location of the distributions can vary widely. Although I'd say that the power estimate is not invalid, I recommend checking the distribution of 5%-quantiles of each permuted distribution to understand how much underlying variation you have in the simulation. The more dispersed the 5%-quantiles are, the more careful you should be in attaching strong claims to a power estimate.
+
+The function `qp_quant_plot()` plots the quantiles in a sina plot using the `ggforce` package ([see on Github](https://github.com/thomasp85/ggforce)). A sina plot combines a dot plot with a violin plot by arranging the dots in the shape that a violing plot would take. The figure indicates that it is only meaningful to use with a sufficiently larger number of dots. This should usually hold in power analysis because the number of dots is equal to the number of simulations.
+
+```{r qp_quant_plot, fig.cap="Fig. 2: Plot of 5%-quantiles"}
+qp_quant_plot(qcapower_vign)
+```
+
+A single plot of 5%-quantiles is not easy to interpret without comparing to another plot using a different number of cases. Even without such a comparison, however, one could infer that the distribution is wide. The body of quantiles ranges from 1 to about 0.65 with the miminum being below 0.6.
+
+
+## Estimating the number of cases
+
+The function `qp_cases()` allows you to estimate how many cases you need to achieve a target level of power. It is based on caluclated data with 5000 simulations and 50000 permutations.
+
+```{r qp_cases}
+qp_cases(0.9, null_hypo = 0.80, alt_hypo = 1)
+```
+
+
+The function `qp_cases_brute()` allows you to estimate how many cases you need to achieve a target level of power. By specifying the `power_target` and all parameters except `cases`, the function iteratively searches for the number of cases yielding a power estimate that is sufficiently close to the target level. (see above).
+
+__Note:__ Running the function may take some time with a high number of simulations and permutations.
+
+```{r qp_cases_brute, eval = F}
+# not run
+qp_cases_brute(0.9, null_hypo = 0.80, alt_hypo = 1)
+```
