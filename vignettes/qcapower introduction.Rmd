@@ -52,7 +52,7 @@ If you want to leave the default parameters as they are, you can, for example, e
 devtools::load_all()
 ```
 
-
+The execution of `qcapower()` can take some time, depending on the settings for `cases`, `perms` and `sims`. We load simulation results into the memory that one would get from the first line in the following code block.
 ```{r qcapower example, eval = c(2, 3)}
 power_example <- qcapower(cases = 15, alt_hypo = 1, null_hypo = 0.85)
 load("qcapower_vign.RData")
