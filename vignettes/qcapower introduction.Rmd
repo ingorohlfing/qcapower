@@ -60,26 +60,25 @@ head(qcapower_vign)
 ```
 
 The output is a dataframe with as many rows as simulations. In addition to the parameters `cases`, `alt_hypo` and `null_hypo`, it contains three columns:  
-* `power`: the power estimate. The entry is the same in each row because it is the power estimate for the entire dataset.
+* `power`: the power estimate. The entry is the same in each row because it is the final power estimate for the entire dataset.
 * `powercum`: the cumulative power estimate. It gives you the estimate up to the given row. For example, after 101 simulations the power estimate is (see `qp_run_plot()` below).  
 * `quant`: the 5%-quantile of the permuted distribution underlying a row (see `qp_quant_plot()` below).
 
 If you are only interested in the power estimate and want a single number as the output, you might take a shortcut by running something like:
 ```{r, eval = F}
-mean(qcapower(cases=10, alt_hypo = 1, null_hypo = 0.8, sims = 10, perms = 1000)$power)
-qcapower(cases=10, alt_hypo = 1, null_hypo = 0.8, sims = 10, perms = 1000)$power[1,]
+mean(qcapower(cases = 10, alt_hypo = 1, null_hypo = 0.8, sims = 10, perms = 1000)$power)
+qcapower(cases = 10, alt_hypo = 1, null_hypo = 0.8, sims = 10, perms = 1000)$power[1,]
 ```
-
 
 ### Checking the number of simulations
 
-The power estimate should be reliable in the sense that it should only change marginally if you add 10 or 50 additional simulations. The cumulative power plot is a visual means for checking whether `sims` is sufficiently large. This can be easily displayed with  `qp_run_plot()`. You can add a title to the figure by specifying `title=T`.
+The power estimate should be reliable in the sense that it should only change marginally if you add 10 or 50 additional simulations. The cumulative power plot is a visual means for checking whether `sims` is sufficiently large. This can be  displayed with  `qp_run_plot()`. You can add a title to the figure by specifying `title = T`.
 
-```{r qp_run_plot, fig.cap="Fig. 1: Plot of running power estimate"}
+```{r qp_run_plot, fig.cap = "Fig. 1: Plot of running power estimate"}
 qp_run_plot(qcapower_vign)
 ```
 
-In this example, we see that the estimate is oscillating aroung 0.5 after about 300 simulations and stabilizes in this range. Setting `sims` to 1000 therefore seems appropiate. If you prefer a different visualization style, you can of course create your own plot by working with the `powercum` column of your dataset.
+In this example, the estimate is in the range of 0.5 after about 300 simulations and stabilizes in this range. Setting `sims` to 1000 therefore seems appropiate. If you prefer a different visualization style, you can create your own plot by working with the `powercum` column of your dataset. The plot is made with `ggplot2` and a `gg` object that can be customized it in the usual ways. 
 
 
 ### Checking the dispersion of estimates
@@ -97,16 +96,16 @@ A single plot of 5%-quantiles is not easy to interpret without comparing to anot
 
 ## Estimating the number of cases
 
-The function `qp_cases()` allows you to estimate how many cases you need to achieve a target level of power. It is based on caluclated data with 5000 simulations and 50000 permutations.
+The function `qp_cases()` allows you to estimate how many cases you need to achieve a target level of power. To avoid running a simulation every time one wants an estimate of n, the function draws on an underlying dataset with estimates of n. The dataset comprises 5000 simulations each with 50000 permutations.
 
 ```{r qp_cases}
 qp_cases(0.9, null_hypo = 0.80, alt_hypo = 1)
 ```
 
 
-The function `qp_cases_brute()` allows you to estimate how many cases you need to achieve a target level of power. By specifying the `power_target` and all parameters except `cases`, the function iteratively searches for the number of cases yielding a power estimate that is sufficiently close to the target level. (see above).
+The function `qp_cases_brute()` allows you to estimate how many cases you need to achieve a target level of power. The function input comprises all specifications of `power_target` (the intended level of power) and all parameters except `cases`. The function runs simulations and iteratively searches for the number of cases yielding a power estimate that is sufficiently close to the target level. (see above on the closeness of the target level and the estimated level).
 
-__Note:__ Running the function may take some time with a high number of simulations and permutations.
+**Note:** Running the function may take some time with a high number of simulations and permutations.
 
 ```{r qp_cases_brute, eval = F}
 # not run
