@@ -22,7 +22,7 @@ The `R` package `qcapower` allows you to estimate power of a term generated in a
 
 All these functions have a *term* as its subject. In a set-relational context, *term* is a neutral term (now meant differently) and capture anything you can encounter in a truth table analysis: a single condition; a conjunction; a disjunction of conditions and conjunctions, that can be necessary or sufficient, that is, INUS and SUIN conditions can also be part of a "term".
 
-At the moment, the package estimates power for *sufficient* set relationships. In principle, it does not make a difference whether we are interested in sufficiency or necessity. For both types of set relations, the consistency measure is used to distinguish consistent from inconsistent set relations. The difference rests in how consistency is calculated and the package currently only implements the consistency formula for consistency.
+At the moment, the package estimates power for *sufficient* set relationships. In principle, it does not make a difference whether we are interested in sufficiency or necessity. For both types of set relations, the *consistency measure* is used to distinguish consistent from inconsistent set relations. The difference rests in how consistency is calculated and the package currently only implements the consistency formula for consistency.
 
 
 ## Estimating power
