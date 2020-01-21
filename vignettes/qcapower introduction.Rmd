@@ -13,7 +13,7 @@ vignette: >
 
 ## Introduction
 
-The `R` package `qcapower` allows you to estimate power of a term in a Qualitative Comparative Analysis (QCA), or, more specifically, a truth table analysis. This vignette introduces the package, its in-built functions and things you might want to do with the package output in addition to what the functions offers. At present, the package includes four functions:  
+The `R` package `qcapower` allows you to estimate power of a term generated in a Qualitative Comparative Analysis (QCA). A term can be a single (INUS) condition, a conjunction or a disjunction of conditions and conjunctions. This vignette introduces the package, its in-built functions and things you might want to do with the package output in addition to what the functions offers. At present, the package includes four functions:  
 * `qcapower()`: estimates power of a term  
 * `qp_run_plot()`: a plot of the running power estimates  
 * `qp_quant_plot()`: a plot of the 5%-percentiles of the permuted distributions  
