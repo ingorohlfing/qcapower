@@ -104,11 +104,11 @@ qp_cases(0.9, null_hypo = 0.80, alt_hypo = 1)
 ```
 
 
-The function `qp_cases_brute()` allows you to estimate how many cases you need to achieve a target level of power. The function input comprises all specifications of `power_target` (the intended level of power) and all parameters except `cases`. The function runs simulations and iteratively searches for the number of cases yielding a power estimate that is sufficiently close to the target level. (see above on the closeness of the target level and the estimated level).
+The function `qp_cases_brute()` allows you to estimate how many cases you need to achieve a target level of power. The function input requires the desired level of power (`power_target`) and all parameters known from `qcapower()` except `cases`. The function runs simulations and iteratively searches for the number of cases yielding a power estimate that is sufficiently close to the target level. (see above on the closeness of the target level and the estimated level).
 
 **Note:** Running the function may take some time with a high number of simulations and permutations.
 
 ```{r qp_cases_brute, eval = F}
 # not run
-qp_cases_brute(0.9, null_hypo = 0.80, alt_hypo = 1)
+qp_cases_brute(power_target, 0.9, null_hypo = 0.80, alt_hypo = 1)
 ```
