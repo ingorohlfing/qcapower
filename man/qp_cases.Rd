@@ -8,7 +8,7 @@ data}
 qp_cases(power_target, null_hypo, alt_hypo)
 }
 \arguments{
-\item{power_target}{Power level target}
+\item{power_target}{Desired level of power}
 
 \item{null_hypo}{Null hypothesis (\emph{H0}). Consistency value separating
 consistent from inconsistent terms.}
@@ -19,6 +19,7 @@ consistency value of term.}
 \description{
 \code{qp_cases} calculates the number of cases needed for a particular
 power level. It is based on the pre-calculated data in \code(qp_sim_power).
+See Vignetter for more details.
 }
 \examples{
 qp_cases(0.1, null_hypo = 0.8, alt_hypo = 1)

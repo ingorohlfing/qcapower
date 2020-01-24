@@ -2,29 +2,30 @@
 % Please edit documentation in R/qcapower.R
 \name{qcapower}
 \alias{qcapower}
-\title{Estimate power in Qualitative Comparative Analysis (QCA).}
+\title{Estimate power for a term in Qualitative Comparative Analysis (QCA).}
 \usage{
 qcapower(cases, null_hypo, alt_hypo, sims = 1000, perms = 10000,
   alpha = 0.05, cons_threshold = 0.01, set_seed = 135)
 }
 \arguments{
 \item{cases}{Number of cases. In fuzzy-set QCA, equal to total number of
-cases}
+cases in the analysis}
 
 \item{null_hypo}{Null hypothesis (\emph{H0}). Consistency value separating
-consistent from inconsistent terms.}
+consistent from inconsistent terms. It is the highest possible consistency
+value that would let you conclude that no set relation is given.}
 
 \item{alt_hypo}{Alternative hypothesis (\emph{H1}). Expected, actual
 consistency value of term.}
 
-\item{sims}{Number of simulations}
+\item{sims}{Number of simulations for calculating power}
 
-\item{perms}{Number of permutations per simulated dataset}
+\item{perms}{Number of permutations of hypothetical dataset per simulation run}
 
-\item{alpha}{Level of alpha at which significance of H0 is tested}
+\item{alpha}{Level of alpha at which statistical significance of H0 is tested}
 
-\item{cons_threshold}{Degree of tolerance in generating data with consistency
-equaling \code{alt_hypo} (see vignette)}
+\item{cons_threshold}{Degree of tolerance in generating hypothetical data
+with consistency equaling \code{alt_hypo} (see vignette)}
 
 \item{set_seed}{Parameter for achieving reproducibility of estimate}
 }
@@ -33,17 +34,17 @@ A dataframe with rows equaling the number of \code{sims}.
   \code{power} is the power estimate and is identical for each rows.
   \code{powercum} is the running power estimate up to this row. \code{quant}
   is the 5\%-quantile of the permuted distributions. See the vignette for
-  more information on \code{powercum} and \code{quant}.
+  more information.
 }
 \description{
-\code{qcapower} returns a power estimate for a term, given information about
-the required parameters
+\code{qcapower} returns a power estimate with regard to the consistency
+of a term, given information about the required parameters
 }
 \details{
-\code{qcapower} allows you to estimate power for a term, that is, to reject
-the null hypothesis that a set relation is in place when it is in place, in
-fact. A term can be a single condition, a conjunction, or a disjunction of
-any combination of the two.
+\code{qcapower} allows you to estimate power for a term. Probability
+is the probability of rejecting the null hypothesis that no set relation
+is in plaace when it is in place, in fact. A term can be a single condition,
+a conjunction, or a disjunction of any combination of the two.
 }
 \examples{
 power_data <- qcapower(cases = 20, null_hypo = 0.8, alt_hypo = 0.95, sims = 10, perms = 1000)

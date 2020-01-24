@@ -1,30 +1,31 @@
-#' Estimate power in Qualitative Comparative Analysis (QCA).
+#' Estimate power for a term in Qualitative Comparative Analysis (QCA).
 #'
-#' \code{qcapower} returns a power estimate for a term, given information about
-#' the required parameters
+#' \code{qcapower} returns a power estimate with regard to the consistency
+#' of a term, given information about the required parameters
 #'
-#' \code{qcapower} allows you to estimate power for a term, that is, to reject
-#' the null hypothesis that a set relation is in place when it is in place, in
-#' fact. A term can be a single condition, a conjunction, or a disjunction of
-#' any combination of the two.
+#' \code{qcapower} allows you to estimate power for a term. Probability
+#' is the probability of rejecting the null hypothesis that no set relation
+#' is in plaace when it is in place, in fact. A term can be a single condition,
+#' a conjunction, or a disjunction of any combination of the two.
 #'
 #' @param cases Number of cases. In fuzzy-set QCA, equal to total number of
-#'   cases
+#'   cases in the analysis
 #' @param null_hypo Null hypothesis (\emph{H0}). Consistency value separating
-#'   consistent from inconsistent terms.
+#'   consistent from inconsistent terms. It is the highest possible consistency
+#'   value that would let you conclude that no set relation is given.
 #' @param alt_hypo Alternative hypothesis (\emph{H1}). Expected, actual
 #'   consistency value of term.
-#' @param sims Number of simulations
-#' @param perms Number of permutations per simulated dataset
-#' @param alpha Level of alpha at which significance of H0 is tested
-#' @param cons_threshold Degree of tolerance in generating data with consistency
-#'   equaling \code{alt_hypo} (see vignette)
+#' @param sims Number of simulations for calculating power
+#' @param perms Number of permutations of hypothetical dataset per simulation run
+#' @param alpha Level of alpha at which statistical significance of H0 is tested
+#' @param cons_threshold Degree of tolerance in generating hypothetical data
+#'  with consistency equaling \code{alt_hypo} (see vignette)
 #' @param set_seed Parameter for achieving reproducibility of estimate
 #' @return A dataframe with rows equaling the number of \code{sims}.
 #'   \code{power} is the power estimate and is identical for each rows.
 #'   \code{powercum} is the running power estimate up to this row. \code{quant}
 #'   is the 5\%-quantile of the permuted distributions. See the vignette for
-#'   more information on \code{powercum} and \code{quant}.
+#'   more information.
 #' @seealso \code{\link{qp_quant_plot}} and \code{\link{qp_run_plot}}
 #' @examples
 #' power_data <- qcapower(cases = 20, null_hypo = 0.8, alt_hypo = 0.95, sims = 10, perms = 1000)
@@ -73,8 +74,9 @@ qcapower <- function(cases, null_hypo, alt_hypo, sims = 1000, perms = 10000,
 #'
 #' \code{qp_cases} calculates the number of cases needed for a particular
 #' power level. It is based on the pre-calculated data in \code(qp_sim_power).
+#' See Vignetter for more details.
 #'
-#' @param power_target Power level target
+#' @param power_target Desired level of power
 #' @param null_hypo Null hypothesis (\emph{H0}). Consistency value separating
 #'   consistent from inconsistent terms.
 #' @param alt_hypo Alternative hypothesis (\emph{H1}). Expected, actual
@@ -110,15 +112,14 @@ qp_cases <- function(power_target, null_hypo, alt_hypo) {
 }
 
 
-#' Calculte the number of cases for a particular case target with brute force
+#' Calculate the number of cases for a particular case target with iterative
+#' simulations (brute force)
 #'
 #' \code{qp_cases_brute} calculates the number of cases needed for a particular
 #' power level. The function starts at a \code(start_value) for the number of
-#' cases and increments until the \code(power_target) is met or the
-#' \code(max_value) has been reached.
-#'
-#' Running the function can take a lot of time. Use \code{\link{qp_cases}} to
-#' calculate the number of cases based on simulated data.
+#' cases and iteratively simulates power and adjusts the number of cases
+#'  until the \code(power_target) is met or the \code(max_value) has been reached.
+#'  Running the function can take a lot of time. Use \code{\link{qp_cases}} to
 #'
 #' @param power_target Power level target
 #' @param start_value Default number of cases for initial search
@@ -202,12 +203,12 @@ qp_run_plot <- function(power_est, title = FALSE) {
 }
 
 
-#' Plot of 5%-quantiles for assessing the dispersion of the permutated
+#' Sina plot of 5%-quantiles for assessing the dispersion of the permutated
 #' distributions
 #'
 #' Depending on the number of cases, the permuted distributions of consistency
-#' values can differ widely in terms of their location on the spectrum and their
-#' shape.
+#' values can differ narrowly or widely in terms of their location on the
+#' spectrum and their shape.
 #'
 #' Creates a sina plot with \code{ggforce}
 #'

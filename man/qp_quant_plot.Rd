@@ -2,7 +2,7 @@
 % Please edit documentation in R/qcapower.R
 \name{qp_quant_plot}
 \alias{qp_quant_plot}
-\title{Plot of 5%-quantiles for assessing the dispersion of the permutated
+\title{Sina plot of 5%-quantiles for assessing the dispersion of the permutated
 distributions}
 \usage{
 qp_quant_plot(power_est, title = FALSE)
@@ -15,8 +15,8 @@ qp_quant_plot(power_est, title = FALSE)
 }
 \description{
 Depending on the number of cases, the permuted distributions of consistency
-values can differ widely in terms of their location on the spectrum and their
-shape.
+values can differ narrowly or widely in terms of their location on the
+spectrum and their shape.
 }
 \details{
 Creates a sina plot with \code{ggforce}
