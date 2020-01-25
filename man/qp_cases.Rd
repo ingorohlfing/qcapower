@@ -18,8 +18,8 @@ consistency value of term.}
 }
 \description{
 \code{qp_cases} calculates the number of cases needed for a particular
-power level. It is based on the pre-calculated data in \code(qp_sim_power).
-See Vignetter for more details.
+power level. It is based on the presimulated data using \code{qcapower}.
+See the vignette for more details.
 }
 \examples{
 qp_cases(0.1, null_hypo = 0.8, alt_hypo = 1)

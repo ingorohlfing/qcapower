@@ -73,8 +73,8 @@ qcapower <- function(cases, null_hypo, alt_hypo, sims = 1000, perms = 10000,
 #' data
 #'
 #' \code{qp_cases} calculates the number of cases needed for a particular
-#' power level. It is based on the pre-calculated data in \code(qp_sim_power).
-#' See Vignetter for more details.
+#' power level. It is based on the presimulated data using \code{qcapower}.
+#' See the vignette for more details.
 #'
 #' @param power_target Desired level of power
 #' @param null_hypo Null hypothesis (\emph{H0}). Consistency value separating
@@ -116,9 +116,9 @@ qp_cases <- function(power_target, null_hypo, alt_hypo) {
 #' simulations (brute force)
 #'
 #' \code{qp_cases_brute} calculates the number of cases needed for a particular
-#' power level. The function starts at a \code(start_value) for the number of
-#' cases and iteratively simulates power and adjusts the number of cases
-#'  until the \code(power_target) is met or the \code(max_value) has been reached.
+#' power level. The function starts with the number of cases given by \code{start_value}
+#' and iteratively simulates power and adjusts the number of cases
+#'  until the \code{power_target} is met or the \code{max_value} has been reached.
 #'  Running the function can take a lot of time. Use \code{\link{qp_cases}} to
 #'
 #' @param power_target Power level target
