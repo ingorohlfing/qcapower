@@ -10,10 +10,7 @@ Resources for preparing the package for CRAN submission
 
  - goodpractices to do list:
  It is good practice to
+ 
 
-  ✖ add a "URL" field to DESCRIPTION. It helps users find information about your package online. If
-    your package does not have a homepage, add an URL to GitHub, or the CRAN package package page.
-  ✖ add a "BugReports" field to DESCRIPTION, and point it to a bug tracker. Many online code hosting
-    services provide bug trackers for free, https://github.com, https://gitlab.com, etc.
-  ✖ not import packages as a whole, as this can cause name clashes between the imported packages.
-    Instead, import only the specific functions you need.
+  
+  ✖ not import packages as a whole, as this can cause name clashes between the imported packages. Instead, import only the specific functions you need.
