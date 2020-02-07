@@ -47,10 +47,6 @@ The role of the simulations and permutations is explained in the manuscript on w
 
 These processes are repeated until the consistency score of the dataset achieves the target value of `alt_hypo`. Because we do not constrain fuzzy-set memberships to two decimal places, it is unlikely that the iterative process does exactly meet the target score. For this reason, we introduce a tolerance parameter telling the `qcapower()` function when the actual consistency value is sufficiently close to the intended value and the iteration can be stopped. If one wants to exactly hit the target consistency level, one only has to set `cons_threshold` to 0.
 
-```{r load package}
-devtools::load_all()
-```
-
 
 If you want to leave the default parameters as they are, you can, for example, estimate power for H1=1, H0=0.85 and n=15 with one line. The execution of `qcapower()` can take some time, depending on the settings for `cases`, `perms` and `sims`. We load simulation results into the memory that one would get from the first line in the following code block.
 ```{r qcapower example, eval = c(2, 3)}
