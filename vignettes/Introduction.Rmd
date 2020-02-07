@@ -97,7 +97,7 @@ A single plot of 5%-quantiles is not easy to interpret without comparing to anot
 
 ## Estimating the number of cases
 
-The function `qp_cases()` allows you to estimate how many cases you need to achieve a target level of power. To avoid running a simulation every time one wants an estimate of n, this function draws on an underlying dataset with estimates of n for different values of H1 and H0. The values of H1 and H0 are limited to the range of 0.75 to 1 in steps of 0.05. Each combination of H0 and H1 was simulated each with 5000 simulations each with 50000 permutations.
+The function `qp_cases()` allows you to estimate how many cases you need to achieve a target level of power. To avoid running a simulation every time one wants an estimate of n, this function draws on an underlying dataset with estimates of n for different values of H1 and H0. The values of H1 and H0 are limited to the range of 0.75 to 0.95 in steps of 0.05; the possible values for H1 are 0.85 and 1. The number of cases ranges from 2 to 100 for each pair of H0 and H1 with H1 being larger than H0. Each combination of H0 and H1 was simulated each with 5000 simulations each with 50000 permutations. (In the future, we might expand the range of H1 values and implement a more-grained grid of values.)
 
 ```{r qp_cases}
 qp_cases(0.9, null_hypo = 0.80, alt_hypo = 1)
