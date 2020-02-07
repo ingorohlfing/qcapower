@@ -2,19 +2,18 @@ Package: qcapower
 Type: Package
 Title: Estimate power in QCA and the number of cases needed to achieve a target
     level
-Version: 0.0.0.9000
+Version: 0.1.0
 Imports:
   ggplot2,
   ggforce
 Authors@R: c(
   person("Ingo", "Rohlfing", email = "i.rohlfing@uni-koeln.de", role = c("aut", "cre")),
   person("Holger", "Doering", email = "doering@uni-bremen.de", role = c("aut")))
-Description: The package allows you to estimate power of a term in a truth table
-    analysis. A term can be anything: a condition, conjunction or disjunction of any
-    of these. For ex ante power estimation, you need a consistency score, the number
-    of cases, an alternative hypothesis about the actual consistency score of the
-    term and a null hypothesis about a consistency score separating consistent from
-    inconsistent terms.
+Description: The package allows users to estimate power of a sufficient term
+    using permutation tests. A term can be anything: A condition, conjunction or 
+    disjunction of any combination of these. The package further allows users to plot 
+    the estimation results and to estimate the number of cases required to achieve a
+    certain level of power, given a prespecified null and alternative hypothesis.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
