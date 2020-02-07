@@ -114,3 +114,37 @@ The simulation has to start with a given number of cases (`start_value`). The de
 # not run
 qp_cases_brute(power_target, 0.9, null_hypo = 0.80, alt_hypo = 1)
 ```
+
+### Packages used in this vignette
+-   base (R Core Team 2019)
+-   ggforce (Lin Pedersen 2019)
+-   ggplot2 (Wickham 2016)
+-   grateful (Rodriguez-Sanchez 2018)
+-   qcapower (Rohlfing and Doering, n.d.)
+-   usethis (Wickham and Bryan 2019)
+-   devtools (Wickham, Hester, and Chang 2019)
+
+References
+----------
+
+Pedersen, Thomas Lin. 2019. *ggforce: Accelerating 'ggplot2'.* R package version 0.3.1.  
+<https://CRAN.R-project.org/package=ggforce>
+
+R Core Team. 2019. *R: A Language and Environment for Statistical Computing*.  
+Vienna, Austria: R Foundation for Statistical Computing.
+<https://www.R-project.org/>.
+
+Rodriguez-Sanchez, Francisco. 2018. *grateful: Facilitate Citation of R Packages*.  
+<https://github.com/Pakillo/grateful>.
+
+Rohlfing, Ingo, and Holger Doering. n.d.  
+*qcapower: Estimate Power in QCA and the Number of Cases Needed to Achieve a Target Level*.   
+<https://github.com/ingorohlfing/qcapower>.
+
+Wickham, Hadley. 2016. *ggplot2: Elegant Graphics for Data Analysis.* Springer-Verlag: New York.
+
+Wickham, Hadley, and Jennifer Bryan. 2019. *usethis: Automate Package and Project Setup*.   <https://CRAN.R-project.org/package=usethis>.
+
+Wickham, Hadley, Jim Hester, and Winston Chang. 2019.  
+*devtools: Tools to Make Developing R Packages Easier*.  
+<https://CRAN.R-project.org/package=devtools>.
