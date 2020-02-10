@@ -106,6 +106,7 @@ The simulation has to start with a given number of cases (`start_value`). The de
 
 **Note:** Running the function may take some time with a high number of simulations and permutations.
 
+(This needs to be more specific.)
 ```{r qp_cases_brute, eval = F}
 # not run
 qp_cases_brute(power_target, 0.9, null_hypo = 0.80, alt_hypo = 1)
