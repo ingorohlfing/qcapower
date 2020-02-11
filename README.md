@@ -7,8 +7,11 @@ Resources for preparing the package for CRAN submission
 - CRAN package policies: <https://cran.r-project.org/web/packages/policies.html> (?)
 - A short intro to the submission process: <https://kbroman.org/pkg_primer/pages/cran.html> (In process)
 
+
  - Multiple platforms automated cghcker:
  <https://github.com/r-hub/rhub> 
 
 
- 
+- Checklist for CRAN submissions
+<https://cran.r-project.org/web/packages/submission_checklist.html>
+
