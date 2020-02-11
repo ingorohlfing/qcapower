@@ -31,6 +31,8 @@
 #' power_data <- qcapower(cases = 20, null_hypo = 0.8, alt_hypo = 0.95, sims = 10, perms = 1000)
 #' head(power_data)
 #' @import ecdf
+#' @import runif
+#'
 #' @export
 qcapower <- function(cases, null_hypo, alt_hypo, sims = 1000, perms = 10000,
                      alpha = 0.05, cons_threshold = 0.01, set_seed = 135) {
@@ -222,6 +224,7 @@ qp_run_plot <- function(power_est, title = FALSE) {
 #' qp_quant_plot(sim_data)
 #' @import ggplot2
 #' @import ggforce
+#' @import stats
 #' @export
 qp_quant_plot <- function(power_est, title = FALSE) {
   pl_title = "Distribution of 5%-quantiles"
