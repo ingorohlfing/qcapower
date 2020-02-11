@@ -70,7 +70,7 @@ qcapower(cases = 10, alt_hypo = 1, null_hypo = 0.8, sims = 10, perms = 1000)$pow
 ### Checking the number of simulations
 
 The power estimate should be reliable in the sense that it should only change marginally if you add 10 or 50 additional simulations. The cumulative power plot is a visual means for checking whether `sims` is sufficiently large. This can be  displayed with  `qp_run_plot()`. You can add a title to the figure by specifying `title = T`.
-
+devtools:load_all()
 ```{r qp_run_plot, fig.cap = "Fig. 1: Plot of running power estimate"}
 qp_run_plot(qcapower_vign)
 ```

@@ -5,8 +5,13 @@
 \title{Calculate the number of cases for a particular case target with iterative
 simulations (brute force)}
 \usage{
-qp_cases_brute(power_target, start_value = 2, max_value = 100,
-  progress = TRUE, ...)
+qp_cases_brute(
+  power_target,
+  start_value = 2,
+  max_value = 100,
+  progress = TRUE,
+  ...
+)
 }
 \arguments{
 \item{power_target}{Power level target}
@@ -28,9 +33,9 @@ and iteratively simulates power and adjusts the number of cases
 }
 \examples{
 \dontrun{
-qp_cases_brute(0.9, null_hypo = 0.80, alt_hypo = 1)
+qp_cases_brute(power_target = 0.9, null_hypo = 0.80, alt_hypo = 1)
 
-qp_cases_brute(0.9, null_hypo = 0.80, alt_hypo = 1, start_value = 20,
+qp_cases_brute(power_target = 0.9, null_hypo = 0.80, alt_hypo = 1, start_value = 20,
                max_value = 50, perms = 500)
 }
 

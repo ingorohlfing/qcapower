@@ -178,6 +178,7 @@ qp_cases_brute <- function(power_target, start_value = 2, max_value = 100,
 #' data(qp_sina_data)
 #' qp_run_plot(qp_sina_data)
 #' @import ggplot2
+#' @import ggforce
 #' @export
 qp_run_plot <- function(power_est, title = FALSE) {
   pl_title = "Power estimate over simulations"
