@@ -1,5 +1,7 @@
 #' Estimate power for a term in Qualitative Comparative Analysis (QCA).
 #'
+utils::globalVariables(c("qp_sim_power", "cases", "quant", "id", "powercum"))
+
 #' \code{qcapower} returns a power estimate with regard to the consistency
 #' of a term, given information about the required parameters
 #'
