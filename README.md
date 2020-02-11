@@ -11,6 +11,3 @@ Resources for preparing the package for CRAN submission
  - goodpractices to do list:
  It is good practice to
  
-
-  
-  ✖ not import packages as a whole, as this can cause name clashes between the imported packages. Instead, import only the specific functions you need.
