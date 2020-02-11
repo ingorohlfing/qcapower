@@ -64,7 +64,7 @@ The output is a dataframe with as many rows as simulations. In addition to the p
 If you are only interested in the power estimate and want a single number as the output, you might take a shortcut by running something like:
 ```{r, eval = F}
 mean(qcapower(cases = 10, alt_hypo = 1, null_hypo = 0.8, sims = 10, perms = 1000)$power)
-qcapower(cases = 10, alt_hypo = 1, null_hypo = 0.8, sims = 10, perms = 1000)$power[1]  #Jus to confirm with Ingo, the comma was deleted here by me as I believe it was a typo leading to errors on all OS.
+qcapower(cases = 10, alt_hypo = 1, null_hypo = 0.8, sims = 10, perms = 1000)$power[1] 
 ```
 
 ### Checking the number of simulations
