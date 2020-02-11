@@ -5,7 +5,8 @@ Title: Estimate power in QCA and the number of cases needed to achieve a target
 Version: 0.1.0
 Imports:
   ggplot2,
-  ggforce
+  ggforce,
+  stats
 Authors@R: c(
   person("Ingo", "Rohlfing", email = "i.rohlfing@uni-koeln.de", role = c("aut", "cre")),
   person("Holger", "Doering", email = "doering@uni-bremen.de", role = c("aut")),
