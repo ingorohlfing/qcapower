@@ -131,9 +131,9 @@ qp_cases <- function(power_target, null_hypo, alt_hypo) {
 #'
 #' @examples
 #' \dontrun{
-#' qp_cases_brute(0.9, null_hypo = 0.80, alt_hypo = 1)
+#' qp_cases_brute(power_target = 0.9, null_hypo = 0.80, alt_hypo = 1)
 #'
-#' qp_cases_brute(0.9, null_hypo = 0.80, alt_hypo = 1, start_value = 20,
+#' qp_cases_brute(power_target = 0.9, null_hypo = 0.80, alt_hypo = 1, start_value = 20,
 #'                max_value = 50, perms = 500)
 #' }
 #'
