@@ -6,11 +6,13 @@ Version: 0.1.0
 Imports:
   ggplot2,
   ggforce,
+  devtools,
   stats
 Authors@R: c(
   person("Ingo", "Rohlfing", email = "i.rohlfing@uni-koeln.de", role = c("aut", "cre")),
   person("Holger", "Doering", email = "doering@uni-bremen.de", role = c("aut")),
   person("Ayjeren", "Rozyjumayeva", email = "rozyjumayeva@wiso.uni-koeln.de", role = c("aut")))
+Depends: R (>= 2.10)
 Description: The package allows users to estimate power of a sufficient term
     using permutation tests. A term can be anything: A condition, conjunction or 
     disjunction of any combination of these. The package further allows users to plot 
@@ -25,4 +27,4 @@ Suggests: knitr,
 VignetteBuilder: knitr
 URL: https://github.com/ingorohlfing/qcapower
 BugReports: https://github.com/ingorohlfing
-Depends: R (>= 2.10)
+
