@@ -2,7 +2,8 @@
 % Please edit documentation in R/qcapower.R
 \name{qcapower}
 \alias{qcapower}
-\title{Estimate power for a term in Qualitative Comparative Analysis (QCA).}
+\title{\code{qcapower} returns a power estimate with regard to the consistency
+of a term, given information about the required parameters}
 \usage{
 qcapower(
   cases,
@@ -45,10 +46,6 @@ A dataframe with rows equaling the number of \code{sims}.
   more information.
 }
 \description{
-\code{qcapower} returns a power estimate with regard to the consistency
-of a term, given information about the required parameters
-}
-\details{
 \code{qcapower} allows you to estimate power for a term. Probability
 is the probability of rejecting the null hypothesis that no set relation
 is in plaace when it is in place, in fact. A term can be a single condition,
