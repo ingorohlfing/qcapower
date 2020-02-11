@@ -109,7 +109,7 @@ The simulation has to start with a given number of cases (`start_value`). The de
 (This needs to be more specific.)
 ```{r qp_cases_brute, eval = F}
 # not run
-qp_cases_brute(power_target, 0.9, null_hypo = 0.80, alt_hypo = 1)
+qp_cases_brute(power_target = 0.9, null_hypo = 0.80, alt_hypo = 1)
 ```
 
 ### Packages used in this vignette
