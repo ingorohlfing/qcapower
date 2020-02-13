@@ -5,13 +5,8 @@
 \title{Calculate the number of cases for a particular case target with iterative
 simulations (brute force)}
 \usage{
-qp_cases_brute(
-  power_target,
-  start_value = 2,
-  max_value = 100,
-  progress = TRUE,
-  ...
-)
+qp_cases_brute(power_target, start_value = 2, max_value = 100,
+  progress = TRUE, ...)
 }
 \arguments{
 \item{power_target}{Power level target}
