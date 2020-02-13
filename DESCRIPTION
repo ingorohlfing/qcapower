@@ -18,6 +18,11 @@ Description: QCA researchers can use the package to estimate power of a sufficie
     disjunction of any combination of these. The package further allows users to plot 
     the estimation results and to estimate the number of cases required to achieve a
     certain level of power, given a prespecified null and alternative hypothesis.
+    Reference for the article introducing power estimation for QCA is: 
+    Rohlfing, Ingo (2018): Power and False Negatives in Qualitative Comparative Analysis: 
+    Foundations, Simulation and Estimation for Empirical Studies. Political Analysis 26 (1): 72-89.
+    <doi:10.1017/pan.2017.30> 
+    Ungated version is available here: <doi:10.17605/OSF.IO/PC4DF>.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
