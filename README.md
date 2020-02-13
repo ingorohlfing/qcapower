@@ -1,17 +1,12 @@
-Resources for preparing the package for CRAN submission
+## Estimating power and required sample size in QCA
+The `qcapower` package for R allows researchers working with Qualitative Comparative Analysis (QCA) to 
 
-- goodpractice package: <https://github.com/mangothecat/goodpractice> (DONE)
-- checking package on Windows with different R versions: <https://win-builder.r-project.org/> (DONE)
-- checking package on Macs (In process)
-- Wickham/Bryan book on packages: <https://r-pkgs.org/> (DONE)
-- CRAN package policies: <https://cran.r-project.org/web/packages/policies.html> (?)
-- A short intro to the submission process: <https://kbroman.org/pkg_primer/pages/cran.html> (In process)
+* estimate power using permutation tests and create diagnostic plots;
+* estimate the required sample size for a target power level.
 
+Please see the [vignette](./vignettes/Introduction.Rmd) for more information on the package. The current development version can be installed from Github.
 
- - Multiple platforms automated cghcker:
- <https://github.com/r-hub/rhub> 
-
-
-- Checklist for CRAN submissions
-<https://cran.r-project.org/web/packages/submission_checklist.html>
-
+```r
+devtools::install_github("ingorohlfing/qcapower")
+library(qcapower)
+```
