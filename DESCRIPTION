@@ -1,7 +1,6 @@
 Package: qcapower
 Type: Package
-Title: Estimate Power in Qualitative Comparative Analysis (QCA) and Number of Cases Needed to Achieve a Target
-    Level
+Title: Estimate Power and Required Sample Size in QCA
 Version: 0.1.0
 Imports:
   ggplot2,
@@ -13,16 +12,15 @@ Authors@R: c(
   person("Holger", "Doering", email = "doering@uni-bremen.de", role = c("aut")),
   person("Ayjeren", "Rozyjumayeva", email = "rozyjumayeva@wiso.uni-koeln.de", role = c("aut")))
 Depends: R (>= 2.10)
-Description: QCA researchers can use the package to estimate power of a sufficient term
+Description: Researchers working with Qualitative Comparative Analysis (QCA)
+    can use the package to estimate power of a sufficient term
     using permutation tests. A term can be anything: A condition, conjunction or 
     disjunction of any combination of these. The package further allows users to plot 
     the estimation results and to estimate the number of cases required to achieve a
     certain level of power, given a prespecified null and alternative hypothesis.
     Reference for the article introducing power estimation for QCA is: 
-    Rohlfing, Ingo (2018): Power and False Negatives in Qualitative Comparative Analysis: 
-    Foundations, Simulation and Estimation for Empirical Studies. Political Analysis 26 (1): 72-89.
-    <doi:10.1017/pan.2017.30> 
-    Ungated version is available here: <doi:10.17605/OSF.IO/PC4DF>.
+    Rohlfing, Ingo (2018) <doi:10.1017/pan.2017.30> 
+    (ungated version: <doi:10.17605/OSF.IO/PC4DF>).
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
