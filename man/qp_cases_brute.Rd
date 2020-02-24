@@ -5,8 +5,13 @@
 \title{Calculate the number of cases for a particular case target with iterative
 simulations (brute force)}
 \usage{
-qp_cases_brute(power_target, start_value = 2, max_value = 100,
-  progress = TRUE, ...)
+qp_cases_brute(
+  power_target,
+  start_value = 2,
+  max_value = 100,
+  progress = TRUE,
+  ...
+)
 }
 \arguments{
 \item{power_target}{Power level target}
@@ -18,6 +23,10 @@ qp_cases_brute(power_target, start_value = 2, max_value = 100,
 \item{progress}{Show progress of calculation (default \code{TRUE})}
 
 \item{...}{\code{qcapower} parameters -- see \code{\link{qcapower}}}
+}
+\value{
+An integer showing how many cases are needed to achieve the
+target level of power.
 }
 \description{
 \code{qp_cases_brute} calculates the number of cases needed for a particular

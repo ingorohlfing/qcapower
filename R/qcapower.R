@@ -84,6 +84,8 @@ qcapower <- function(cases, null_hypo, alt_hypo, sims = 1000, perms = 10000,
 #'   consistent from inconsistent terms.
 #' @param alt_hypo Alternative hypothesis (\emph{H1}). Expected, actual
 #'   consistency value of term.
+#' @return An integer showing how many cases are needed to achieve the
+#' target level of power.
 #'
 #' @seealso \code{\link{qp_cases_brute}}
 #'
@@ -129,6 +131,8 @@ qp_cases <- function(power_target, null_hypo, alt_hypo) {
 #' @param max_value Default maximum number of cases for search
 #' @param progress Show progress of calculation (default \code{TRUE})
 #' @param ... \code{qcapower} parameters -- see \code{\link{qcapower}}
+#' @return An integer showing how many cases are needed to achieve the
+#' target level of power.
 #'
 #' @seealso \code{\link{qp_cases_brute}}
 #'
@@ -173,6 +177,7 @@ qp_cases_brute <- function(power_target, start_value = 2, max_value = 100,
 #' @param power_est Dataframe containing the simulation results (see
 #'   \code{\link{qcapower}})
 #' @param title Option for adding title to plot (default \code{FALSE})
+#' @return A line plot (`gg` object).
 #' @examples
 #' power_data <- qcapower(cases = 20, null_hypo = 0.8, alt_hypo = 0.95, sims = 10, perms = 1000)
 #' qp_run_plot(power_data)
@@ -219,6 +224,8 @@ qp_run_plot <- function(power_est, title = FALSE) {
 #' @param power_est Dataframe containing simulation results (see
 #'   \code{\link{qcapower}})
 #' @param title Option for adding title to plot (default \code{FALSE})
+#' @return A sina plot using the cases to visualize the density
+#' distribution (`gg` object).
 #' @examples
 #' sim_data <- qp_sina_data
 #' qp_quant_plot(sim_data)

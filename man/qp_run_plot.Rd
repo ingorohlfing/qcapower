@@ -12,6 +12,9 @@ qp_run_plot(power_est, title = FALSE)
 
 \item{title}{Option for adding title to plot (default \code{FALSE})}
 }
+\value{
+A line plot (`gg` object).
+}
 \description{
 \code{qp_run_plot} allows you to plot the running power estimate to
 determine whether \code{sims} is sufficiently large to derive a reliable

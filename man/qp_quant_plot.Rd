@@ -13,6 +13,10 @@ qp_quant_plot(power_est, title = FALSE)
 
 \item{title}{Option for adding title to plot (default \code{FALSE})}
 }
+\value{
+A sina plot using the cases to visualize the density
+distribution (`gg` object).
+}
 \description{
 Depending on the number of cases, the permuted distributions of consistency
 values can differ narrowly or widely in terms of their location on the

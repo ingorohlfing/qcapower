@@ -5,8 +5,16 @@
 \title{\code{qcapower} returns a power estimate with regard to the consistency
 of a term, given information about the required parameters}
 \usage{
-qcapower(cases, null_hypo, alt_hypo, sims = 1000, perms = 10000,
-  alpha = 0.05, cons_threshold = 0.01, set_seed = 135)
+qcapower(
+  cases,
+  null_hypo,
+  alt_hypo,
+  sims = 1000,
+  perms = 10000,
+  alpha = 0.05,
+  cons_threshold = 0.01,
+  set_seed = 135
+)
 }
 \arguments{
 \item{cases}{Number of cases. In fuzzy-set QCA, equal to total number of

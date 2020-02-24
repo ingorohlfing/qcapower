@@ -16,6 +16,10 @@ consistent from inconsistent terms.}
 \item{alt_hypo}{Alternative hypothesis (\emph{H1}). Expected, actual
 consistency value of term.}
 }
+\value{
+An integer showing how many cases are needed to achieve the
+target level of power.
+}
 \description{
 \code{qp_cases} calculates the number of cases needed for a particular
 power level. It is based on the presimulated data using \code{qcapower}.
