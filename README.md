@@ -1,4 +1,5 @@
 [![CRAN](http://www.r-pkg.org/badges/version/qcapower)](https://cran.r-project.org/package=qcapower)
+[![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/qcapower)](https://CRAN.R-project.org/package=qcapower)
 
 ## Estimating power and required sample size in QCA
 The `qcapower` package for R allows researchers working with Qualitative Comparative Analysis (QCA) to 
