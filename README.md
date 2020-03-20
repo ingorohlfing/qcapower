@@ -1,6 +1,6 @@
 [![CRAN](http://www.r-pkg.org/badges/version/qcapower)](https://cran.r-project.org/package=qcapower)
 [![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/qcapower)](https://CRAN.R-project.org/package=qcapower)
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 ## Estimating power and required sample size in QCA
 The `qcapower` package for R allows researchers working with Qualitative Comparative Analysis (QCA) to 
