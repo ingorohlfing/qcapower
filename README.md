@@ -15,9 +15,12 @@ install.packages("qcapower")
 library(qcapower)
 ```
 
-The current development version can be installed from Github. As of today, it is the same as the version on CRAN.
+The current version can be installed from Github. As of today, it is the same as the version on CRAN.
 
 ```r
 devtools::install_github("ingorohlfing/qcapower")
 library(qcapower)
 ```
+***
+
+We received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation program (grant agreement nr. 638425, *Enhanced Qualitative and Multimethod Research*).
