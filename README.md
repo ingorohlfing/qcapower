@@ -1,4 +1,4 @@
-[![CRAN](http://www.r-pkg.org/badges/version/qcapower)](https://cran.r-project.org/package=qcapower)
+[![CRAN](http://cranlogs.r-pkg.org/badges/grand-total/)](https://cran.r-project.org/package=qcapower)
 [![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/qcapower)](https://CRAN.R-project.org/package=qcapower)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
