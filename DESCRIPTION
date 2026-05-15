@@ -14,7 +14,7 @@ Authors@R: c(
   person("Holger", "Doering", 
     email = "doering@uni-bremen.de", 
     role = c("aut"),
-    c = (ORCID = "0000-0002-6616-8805")),
+    comment = c(ORCID = "0000-0002-6616-8805")),
   person("Ayjeren", "Rozyjumayeva", role = c("aut")))
 Depends: R (>= 2.10)
 Description: Researchers working with Qualitative Comparative Analysis (QCA)
