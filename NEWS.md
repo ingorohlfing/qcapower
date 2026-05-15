@@ -2,7 +2,7 @@
 
 * Maintainer e-mail address and author email adress (Döring) updated.
 * Added ORCID identifiers, if available.
-* Removed devtools from NAMESPACE (not used in 0.1.0).
+* Removed devtools from NAMESPACE (not used in 0.1.0) and from vignette.
 
 
 # qcapower 0.1.0
