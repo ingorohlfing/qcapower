@@ -8,9 +8,15 @@ Imports:
   devtools,
   stats
 Authors@R: c(
-  person("Ingo", "Rohlfing", email = "i.rohlfing@uni-koeln.de", role = c("aut", "cre")),
-  person("Holger", "Doering", email = "doering@uni-bremen.de", role = c("aut")),
-  person("Ayjeren", "Rozyjumayeva", email = "rozyjumayeva@wiso.uni-koeln.de", role = c("aut")))
+  person("Ingo", "Rohlfing", 
+    email = "ingo.rohlfing@uni-passau.de", 
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0001-8715-4771")),
+  person("Holger", "Doering", 
+    email = "doering@uni-bremen.de", 
+    role = c("aut"),
+    c = (ORCID = "0000-0002-6616-8805")),
+  person("Ayjeren", "Rozyjumayeva", role = c("aut")))
 Depends: R (>= 2.10)
 Description: Researchers working with Qualitative Comparative Analysis (QCA)
     can use the package to estimate power of a sufficient term
