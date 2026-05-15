@@ -1,7 +1,7 @@
 Package: qcapower
 Type: Package
 Title: Estimate Power and Required Sample Size in QCA
-Version: 0.1.0
+Version: 0.2.0
 Imports:
   ggplot2,
   ggforce,
