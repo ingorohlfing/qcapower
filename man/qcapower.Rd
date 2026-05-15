@@ -2,7 +2,8 @@
 % Please edit documentation in R/qcapower.R
 \name{qcapower}
 \alias{qcapower}
-\title{\code{qcapower} returns a power estimate with regard to the consistency
+\title{Estimate power for a term in Qualitative Comparative Analysis (QCA).
+\code{qcapower} returns a power estimate with regard to the consistency
 of a term, given information about the required parameters}
 \usage{
 qcapower(

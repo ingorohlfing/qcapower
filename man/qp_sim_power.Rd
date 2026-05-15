@@ -4,7 +4,9 @@
 \name{qp_sim_power}
 \alias{qp_sim_power}
 \title{Data simulated power estimates}
-\format{A dataframe with simulation parameters and calculated power}
+\format{
+A dataframe with simulation parameters and calculated power
+}
 \usage{
 qp_sim_power
 }

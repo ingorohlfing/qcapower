@@ -4,7 +4,9 @@
 \name{qp_sina_data}
 \alias{qp_sina_data}
 \title{Data simulated power estimates for plotting of 5\%-quantiles}
-\format{A dataframe with 1000 rows and 6 variables:}
+\format{
+A dataframe with 1000 rows and 6 variables:
+}
 \usage{
 qp_sina_data
 }

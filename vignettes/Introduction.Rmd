@@ -11,10 +11,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = F}
-library(devtools)
-devtools::load_all()
-```
+
 
 ## Introduction
 
@@ -130,7 +127,6 @@ Packages used in this vignette and references
 -   grateful (Rodriguez-Sanchez 2018)
 -   qcapower (Rohlfing and Doering, n.d.)
 -   usethis (Wickham and Bryan 2019)
--   devtools (Wickham, Hester, and Chang 2019)
 
 Pedersen, Thomas Lin. 2019. *ggforce: Accelerating 'ggplot2'.* R package version 0.3.1.  
 <https://CRAN.R-project.org/package=ggforce>
@@ -150,6 +146,3 @@ Wickham, Hadley. 2016. *ggplot2: Elegant Graphics for Data Analysis.* Springer-V
 
 Wickham, Hadley, and Jennifer Bryan. 2019. *usethis: Automate Package and Project Setup*.   <https://CRAN.R-project.org/package=usethis>.
 
-Wickham, Hadley, Jim Hester, and Winston Chang. 2019.  
-*devtools: Tools to Make Developing R Packages Easier*.  
-<https://CRAN.R-project.org/package=devtools>.
