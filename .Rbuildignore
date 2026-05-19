@@ -3,3 +3,8 @@
 ^data-raw$
 ^doc$
 ^Meta$
+^\.positai$
+^\.claude$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

@@ -8,11 +8,10 @@ The `qcapower` package for R allows researchers working with Qualitative Compara
 * estimate power using permutation tests and create diagnostic plots;
 * estimate the required sample size for a target power level.
 
-Version 0.1.0 of the package is available on [CRAN](https://cran.r-project.org/package=qcapower). 
-Please read the vignette on CRAN for information on what you can do with the package.
-The current Github version is 0.2.0 that only differs from the version 0.1.0 
-regarding updated author information and minor fixes that do not concern the main
-functions.
+Version 0.2.0 of the package is available on [CRAN](https://cran.r-project.org/package=qcapower)
+and on [Github](https://github.com/ingorohlfing/qcapower). 
+Please read the vignette on CRAN or the article here for information about
+what you can do with the package.
 
 ```r
 install.packages("qcapower")
