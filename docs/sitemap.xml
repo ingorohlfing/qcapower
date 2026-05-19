@@ -1,0 +1,17 @@
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/articles/index.html</loc></url>
+<url><loc>/articles/Introduction.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/news/index.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/qcapower.html</loc></url>
+<url><loc>/reference/qp_cases.html</loc></url>
+<url><loc>/reference/qp_cases_brute.html</loc></url>
+<url><loc>/reference/qp_quant_plot.html</loc></url>
+<url><loc>/reference/qp_run_plot.html</loc></url>
+<url><loc>/reference/qp_sim_power.html</loc></url>
+<url><loc>/reference/qp_sina_data.html</loc></url>
+</urlset>
+
