@@ -2,7 +2,7 @@
 [![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/grand-total/qcapower)](https://CRAN.R-project.org/package=qcapower)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-## Estimating power and required sample size in QCA
+## Estimating power and required sample size in QCA <img src="man/figures/qcapower_hexsticker.png" align="right" height="150" style="float:right; height:150px;">
 The `qcapower` package for R allows researchers working with Qualitative Comparative Analysis (QCA) to 
 
 * estimate power using permutation tests and create diagnostic plots;
